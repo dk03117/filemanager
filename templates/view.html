@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="/" class="btn btn-secondary mb-3">⬅ Back</a>
+<h3 class="mb-4">{{ filename }}</h3>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h5 class="text-primary">Extracted Document Content</h5>
+  <a href="/download_text/{{ filename }}" class="btn btn-success">
+    ⬇ Download Extracted Text
+  </a>
+</div>
+
+<div class="row g-4 align-items-start">
+
+  <!-- Left: Text -->
+  <div class="col-lg-8 col-md-7">
+    <div class="card p-4 shadow-sm bg-white h-100">
+      <h5 class="text-primary mb-3">📄 Extracted Text</h5>
+      {% if content %}
+        <pre>{{ content }}</pre>
+      {% else %}
+        <p class="text-muted">No text found in this document.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Right: Images -->
+  <div class="col-lg-4 col-md-5">
+    <div class="card p-3 shadow-sm bg-white h-100">
+      <h5 class="text-primary mb-3">🖼️ Extracted Images</h5>
+      {% if images %}
+        <div class="row">
+          {% for img in images %}
+          <div class="col-12 mb-3">
+            <img src="{{ img }}" class="img-fluid rounded shadow-sm border" alt="Embedded Image">
+          </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-muted">No images found in this file.</p>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

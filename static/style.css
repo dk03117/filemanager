@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+header {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.delete {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+pre {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.card img {
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.card {
+    background-color: #ffffffcc; /* slightly transparent white */
+}
+
+@media (max-width: 768px) {
+    pre {
+        max-height: none;
+    }
+}

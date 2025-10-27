@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title if title else "File Manager" }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">📁 FastAPI File Manager</a>
+  </div>
+</nav>
+
+<div class="container mt-5 mb-5">
+  {% block content %}{% endblock %}
+</div>
+
+<footer>
+  <p></p>
+</footer>
+
+</body>
+</html>
